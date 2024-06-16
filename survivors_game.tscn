@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcqcy20dlx088"]
+[gd_scene load_steps=6 format=3 uid="uid://bcqcy20dlx088"]
 
 [ext_resource type="PackedScene" uid="uid://cu6tglre7rtcy" path="res://player.tscn" id="1_8337d"]
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_sufoa"]
@@ -9,6 +9,9 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -182, -198, 0, 0, 0, 0, 2115, -191, 0, 0, 0, 0, 2115, 1368, 0, 0, 0, 0, -186, 1379, 0, 0, 0, 0, -182, -198)
 }
 point_count = 5
+
+[sub_resource type="SystemFont" id="SystemFont_olqmi"]
+font_names = PackedStringArray("Sysfont")
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -73,7 +76,37 @@ position = Vector2(1087, 839)
 position = Vector2(1053, 149)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 1.1
+wait_time = 0.6
 autostart = true
 
+[node name="GameOver" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.346155, 2.22995e-07, 9.52078e-09, 0.803922)
+
+[node name="Label" type="Label" parent="GameOver/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -11.5
+offset_right = 46.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_olqmi")
+theme_override_font_sizes/font_size = 191
+text = "GAME OVER"
+
+[connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
