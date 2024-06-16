@@ -5,6 +5,10 @@ var health = 3
 @onready var player = get_node("/root/Game/Player")
 
 
+func _ready():
+	%Slime.play_walk()
+
+
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)
 	velocity = direction * 250.0
@@ -13,6 +17,7 @@ func _physics_process(delta):
 	
 func take_damage():
 	health -= 1
+	%Slime.play_hurt()
 	
 	if health == 0:
 		queue_free()
