@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ogik4s70pgwl"]
+[gd_scene load_steps=15 format=3 uid="uid://ogik4s70pgwl"]
 
 [ext_resource type="Texture2D" uid="uid://dvgfmy6vtvjji" path="res://characters/slime/slime_body.png" id="1_3j35h"]
 [ext_resource type="Script" path="res://characters/slime/slime.gd" id="1_87y5x"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c078jrp2yvc4s" path="res://characters/slime/slime_face.png" id="2_ygydt"]
 [ext_resource type="Texture2D" uid="uid://btbxea1f3vwot" path="res://characters/slime/slime_body_hurt.png" id="4_0qu0c"]
 [ext_resource type="Texture2D" uid="uid://cai2ijnbypqtr" path="res://characters/slime/slime_hurt_eyes.png" id="4_hi70h"]
+[ext_resource type="Texture2D" uid="uid://tyn7qip6uuuk" path="res://characters/BlackGuy/Eyeball.png" id="7_gw0eq"]
 
 [sub_resource type="Animation" id="Animation_y4lve"]
 length = 0.001
@@ -68,6 +69,18 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("eye:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_lu163"]
@@ -203,18 +216,56 @@ tracks/2/keys = {
 "values": [-24.0, -28.0, -24.0]
 }
 
+[sub_resource type="Animation" id="Animation_6hg7h"]
+resource_name = "walk_eye"
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("eye:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_kf5ej"]
+resource_name = "hurt_eye"
+length = 0.1
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("eye:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [13, 14]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j6cum"]
 _data = {
 "RESET": SubResource("Animation_y4lve"),
 "hurt": SubResource("Animation_lu163"),
+"hurt_eye": SubResource("Animation_kf5ej"),
 "idle": SubResource("Animation_71vdi"),
-"walk": SubResource("Animation_l6fy2")
+"walk": SubResource("Animation_l6fy2"),
+"walk_eye": SubResource("Animation_6hg7h")
 }
 
 [node name="Slime" type="Node2D"]
 script = ExtResource("1_87y5x")
 
 [node name="GroundShadow" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0.898039, 0.878431, 0.831373, 1)
 z_index = -1
 z_as_relative = false
@@ -222,6 +273,7 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_cq7ej")
 
 [node name="Anchor" type="Marker2D" parent="."]
+visible = false
 
 [node name="SlimeBody" type="Sprite2D" parent="Anchor"]
 texture = ExtResource("1_3j35h")
@@ -243,3 +295,9 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_j6cum")
 }
+
+[node name="eye" type="Sprite2D" parent="."]
+scale = Vector2(1.28906, 1.28906)
+texture = ExtResource("7_gw0eq")
+hframes = 4
+vframes = 5
