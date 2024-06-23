@@ -1,16 +1,22 @@
 extends CharacterBody2D
 
 
+const SPEED = 400
+const DAMAGE_RATE = 10.0
+
+
 signal health_depleted
-
-
 var health = 100.0
 var last_direction = Vector2.ZERO
 
 
+func get_input():
+	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	velocity = input_direction * SPEED
+
+
 func _physics_process(delta):
-	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	velocity = direction * 200
+	get_input()
 	move_and_slide()
 
 	if velocity.length() > 0.0:
@@ -36,9 +42,8 @@ func _physics_process(delta):
 			$AnimationPlayer.play("idle_left")
 		elif last_direction == Vector2.RIGHT:
 			$AnimationPlayer.play("idle_right")
-			
-			
-	const DAMAGE_RATE = 50.0
+		
+    
 	var overlapping_mobs = %HurtBox.get_overlapping_bodies()
 	if overlapping_mobs.size() > 0:
 		health -= DAMAGE_RATE * overlapping_mobs.size() * delta
