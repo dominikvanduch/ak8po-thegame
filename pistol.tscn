@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bjujjjs5rhx2g"]
 
 [ext_resource type="Script" path="res://pistol.gd" id="1_lyqqw"]
-[ext_resource type="Texture2D" uid="uid://c4inlp7qd2bvj" path="res://weapon.webp" id="2_1g824"]
+[ext_resource type="Texture2D" uid="uid://c4inlp7qd2bvj" path="res://Weapon.webp" id="2_1g824"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qo7xo"]
 radius = 622.029
