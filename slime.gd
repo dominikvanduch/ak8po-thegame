@@ -1,8 +1,11 @@
 extends CharacterBody2D
 
+
+signal killed(points)
 var health = 3
 
 @onready var player = get_node("/root/Game/Player")
+@export var points = 100
 
 
 func _ready():
@@ -11,7 +14,7 @@ func _ready():
 
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)
-	velocity = direction * 150
+	velocity = direction * 120
 	move_and_slide()
 	
 	
@@ -20,6 +23,7 @@ func take_damage():
 	%Slime.play_hurt()
 	
 	if health == 0:
+		killed.emit(points)
 		queue_free()
 		
 		const SMOKE_SCENE = preload("res://smoke_explosion/smoke_explosion.tscn")
