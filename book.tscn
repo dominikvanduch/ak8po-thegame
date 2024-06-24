@@ -1,27 +1,27 @@
 [gd_scene load_steps=4 format=3 uid="uid://bjujjjs5rhx2g"]
 
-[ext_resource type="Script" path="res://pistol.gd" id="1_lyqqw"]
-[ext_resource type="Texture2D" uid="uid://c4inlp7qd2bvj" path="res://Weapon.webp" id="2_1g824"]
+[ext_resource type="Script" path="res://book.gd" id="1_bdch4"]
+[ext_resource type="Texture2D" uid="uid://c4inlp7qd2bvj" path="res://Weapon.webp" id="2_bl1nk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qo7xo"]
 radius = 604.041
 
-[node name="Pistol" type="Area2D"]
+[node name="Book" type="Area2D"]
 collision_layer = 0
 collision_mask = 2
-script = ExtResource("1_lyqqw")
+script = ExtResource("1_bdch4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_qo7xo")
 
 [node name="WeaponPivot" type="Marker2D" parent="."]
 
-[node name="Pistol" type="Sprite2D" parent="WeaponPivot"]
+[node name="Book" type="Sprite2D" parent="WeaponPivot"]
 position = Vector2(37, 3.55271e-15)
 scale = Vector2(0.065125, 0.065125)
-texture = ExtResource("2_1g824")
+texture = ExtResource("2_bl1nk")
 
-[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol"]
+[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Book"]
 unique_name_in_owner = true
 position = Vector2(155.405, -38.2883)
 

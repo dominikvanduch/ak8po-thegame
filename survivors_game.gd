@@ -2,7 +2,8 @@ extends Node2D
 
 
 func _ready():
-	spawn_mob()
+	# spawn_mob()
+	print("mob spawned")
 
 
 func spawn_mob():
@@ -13,7 +14,7 @@ func spawn_mob():
 
 
 func _on_timer_timeout():
-	spawn_mob()
+	# spawn_mob()
 	print("mob spawned")
 
 

@@ -1,14 +1,14 @@
 [gd_scene load_steps=18 format=3 uid="uid://cu6tglre7rtcy"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_deumw"]
-[ext_resource type="PackedScene" uid="uid://bjujjjs5rhx2g" path="res://pistol.tscn" id="3_i42up"]
+[ext_resource type="PackedScene" uid="uid://bjujjjs5rhx2g" path="res://book.tscn" id="3_i42up"]
 [ext_resource type="Texture2D" uid="uid://bmljx65wlw28w" path="res://characters/BlackGuy/FullWalkSprite.png" id="3_oxcxd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bjyj7"]
-radius = 34.0
+radius = 20.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y6tds"]
-radius = 39.0512
+radius = 27.1662
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tk34d"]
 bg_color = Color(0.776471, 0, 0.196078, 1)
@@ -179,13 +179,16 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
+position = Vector2(0, -28)
 script = ExtResource("1_deumw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 26)
+scale = Vector2(0.788576, 0.44966)
 shape = SubResource("CircleShape2D_bjyj7")
 
 [node name="Pistol" parent="." instance=ExtResource("3_i42up")]
-position = Vector2(1, 0)
 
 [node name="HurtBox" type="Area2D" parent="."]
 unique_name_in_owner = true
@@ -193,6 +196,8 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, 1)
+scale = Vector2(0.560195, -1.16141)
 shape = SubResource("CircleShape2D_y6tds")
 debug_color = Color(0.751571, 0.435175, 0.397788, 0.42)
 

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 400
+const SPEED = 300
 const DAMAGE_RATE = 10.0
 
 
