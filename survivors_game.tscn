@@ -1,8 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://bcqcy20dlx088"]
+[gd_scene load_steps=18 format=3 uid="uid://bcqcy20dlx088"]
 
 [ext_resource type="PackedScene" uid="uid://cu6tglre7rtcy" path="res://player.tscn" id="1_8337d"]
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_sufoa"]
-[ext_resource type="PackedScene" uid="uid://ddaoixgn541d6" path="res://pine_tree.tscn" id="2_804bi"]
 [ext_resource type="Texture2D" uid="uid://c18v7pwuah6cp" path="res://Texture/TX Tileset Grass.png" id="4_2pxxr"]
 [ext_resource type="Texture2D" uid="uid://bs5wba66pie44" path="res://Texture/TX Tileset Stone Ground.png" id="5_kbp6a"]
 [ext_resource type="Texture2D" uid="uid://2d2il3wu5hlr" path="res://Texture/TX Tileset Wall.png" id="6_24vww"]
@@ -527,58 +526,6 @@ curve = SubResource("Curve2D_4ofti")
 unique_name_in_owner = true
 position = Vector2(-1061, -877)
 rotation = -2.35619
-
-[node name="PineTree" parent="." instance=ExtResource("2_804bi")]
-visible = false
-position = Vector2(235, 785)
-
-[node name="PineTree2" parent="." instance=ExtResource("2_804bi")]
-visible = false
-position = Vector2(456, 496)
-
-[node name="PineTree3" parent="." instance=ExtResource("2_804bi")]
-visible = false
-position = Vector2(340, 522)
-
-[node name="PineTree4" parent="." instance=ExtResource("2_804bi")]
-visible = false
-position = Vector2(377, 364)
-
-[node name="PineTree5" parent="." instance=ExtResource("2_804bi")]
-visible = false
-position = Vector2(1124, 1020)
-
-[node name="PineTree6" parent="." instance=ExtResource("2_804bi")]
-visible = false
-position = Vector2(626, 884)
-
-[node name="PineTree7" parent="." instance=ExtResource("2_804bi")]
-visible = false
-position = Vector2(812, 672)
-
-[node name="PineTree8" parent="." instance=ExtResource("2_804bi")]
-visible = false
-position = Vector2(1551, 907)
-
-[node name="PineTree9" parent="." instance=ExtResource("2_804bi")]
-visible = false
-position = Vector2(1819, 406)
-
-[node name="PineTree10" parent="." instance=ExtResource("2_804bi")]
-visible = false
-position = Vector2(1766, 166)
-
-[node name="PineTree11" parent="." instance=ExtResource("2_804bi")]
-visible = false
-position = Vector2(1330, 149)
-
-[node name="PineTree12" parent="." instance=ExtResource("2_804bi")]
-visible = false
-position = Vector2(1087, 839)
-
-[node name="PineTree13" parent="." instance=ExtResource("2_804bi")]
-visible = false
-position = Vector2(1053, 149)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.6

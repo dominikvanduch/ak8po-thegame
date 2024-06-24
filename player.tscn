@@ -11,18 +11,20 @@ radius = 34.0
 radius = 39.0512
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tk34d"]
-bg_color = Color(0.442911, 0.442911, 0.442911, 1)
+bg_color = Color(0.776471, 0, 0.196078, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_41s18"]
-bg_color = Color(0.00495086, 0.712558, 0.446202, 1)
+bg_color = Color(0.542979, 0.00325745, 0.881189, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+corner_detail = 1
 
 [sub_resource type="Animation" id="Animation_lphdw"]
 length = 0.001
@@ -196,10 +198,11 @@ debug_color = Color(0.751571, 0.435175, 0.397788, 0.42)
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true
-offset_left = -88.0
-offset_top = -147.0
-offset_right = 89.0
-offset_bottom = -120.0
+offset_left = -24.0
+offset_top = -46.0
+offset_right = 153.0
+offset_bottom = -19.0
+scale = Vector2(0.26829, 0.207492)
 theme_override_styles/background = SubResource("StyleBoxFlat_tk34d")
 theme_override_styles/fill = SubResource("StyleBoxFlat_41s18")
 value = 100.0
