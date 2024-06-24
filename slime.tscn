@@ -3,8 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://ogik4s70pgwl" path="res://characters/slime/slime.tscn" id="1_4klrc"]
 [ext_resource type="Script" path="res://slime.gd" id="1_4rrn2"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3ydjf"]
-radius = 52.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mumlh"]
+radius = 15.0
+height = 44.0
 
 [node name="Slime" type="CharacterBody2D"]
 collision_layer = 2
@@ -15,5 +16,4 @@ script = ExtResource("1_4rrn2")
 unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -30)
-shape = SubResource("CircleShape2D_3ydjf")
+shape = SubResource("CapsuleShape2D_mumlh")

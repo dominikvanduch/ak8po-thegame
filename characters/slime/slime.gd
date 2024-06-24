@@ -2,9 +2,9 @@ extends Node2D
 
 
 func play_walk():
-	%AnimationPlayer.play("walk")
+	%AnimationPlayer.play("walk_eye")
 
 
 func play_hurt():
-	%AnimationPlayer.play("hurt")
-	%AnimationPlayer.queue("walk")
+	%AnimationPlayer.play("hurt_eye")
+	%AnimationPlayer.queue("walk_eye")
