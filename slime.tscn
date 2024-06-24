@@ -1,18 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://0skpjt5rd1hy"]
 
-[ext_resource type="PackedScene" uid="uid://ogik4s70pgwl" path="res://characters/slime/slime.tscn" id="1_4klrc"]
 [ext_resource type="Script" path="res://slime.gd" id="1_4rrn2"]
+[ext_resource type="PackedScene" uid="uid://ogik4s70pgwl" path="res://characters/cthlu/chtlu.tscn" id="2_18jp6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mumlh"]
 radius = 15.0
 height = 44.0
 
-[node name="Slime" type="CharacterBody2D"]
+[node name="Cthlu" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_4rrn2")
 
-[node name="Slime" parent="." instance=ExtResource("1_4klrc")]
+[node name="Cthlu" parent="." instance=ExtResource("2_18jp6")]
 unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

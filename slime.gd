@@ -9,7 +9,7 @@ var health = 3
 
 
 func _ready():
-	%Slime.play_walk()
+	%Cthlu.play_walk()
 
 
 func _physics_process(delta):
@@ -20,7 +20,7 @@ func _physics_process(delta):
 	
 func take_damage():
 	health -= 1
-	%Slime.play_hurt()
+	%Cthlu.play_hurt()
 	
 	if health == 0:
 		killed.emit(points)

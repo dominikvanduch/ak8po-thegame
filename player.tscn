@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://player.gd" id="1_deumw"]
 [ext_resource type="PackedScene" uid="uid://bjujjjs5rhx2g" path="res://book.tscn" id="3_i42up"]
-[ext_resource type="Texture2D" uid="uid://bmljx65wlw28w" path="res://characters/BlackGuy/FullWalkSprite.png" id="3_oxcxd"]
+[ext_resource type="Texture2D" uid="uid://bmljx65wlw28w" path="res://characters/black-guy/FullWalkSprite.png" id="3_oxcxd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bjyj7"]
 radius = 20.0
@@ -188,7 +188,7 @@ position = Vector2(0, 26)
 scale = Vector2(0.788576, 0.44966)
 shape = SubResource("CircleShape2D_bjyj7")
 
-[node name="Pistol" parent="." instance=ExtResource("3_i42up")]
+[node name="Book" parent="." instance=ExtResource("3_i42up")]
 
 [node name="HurtBox" type="Area2D" parent="."]
 unique_name_in_owner = true
