@@ -1,12 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://b5m1cjjbatpn0"]
 
 [ext_resource type="Script" path="res://hud.gd" id="1_xjkuo"]
-
-[sub_resource type="SystemFont" id="SystemFont_80wr4"]
-font_names = PackedStringArray("Sysfont")
+[ext_resource type="FontFile" uid="uid://cw1xjnefs3iqa" path="res://fonts/sysfont.otf" id="2_i44nd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pse16"]
-font = SubResource("SystemFont_80wr4")
+font = ExtResource("2_i44nd")
 font_size = 32
 
 [node name="HUD" type="Control"]
