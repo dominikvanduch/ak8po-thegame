@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dvpwypte4hhpy" path="res://projectile.webp" id="2_trhb3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jhxi3"]
-radius = 40.0125
+radius = 11.0
 
 [node name="Bullet" type="Area2D"]
 top_level = true
@@ -13,8 +13,8 @@ collision_mask = 3
 script = ExtResource("1_nt8gg")
 
 [node name="Projectile" type="Sprite2D" parent="."]
-position = Vector2(-5.99999, 1)
-scale = Vector2(0.2075, 0.2075)
+position = Vector2(5.72205e-06, 1.90735e-06)
+scale = Vector2(0.048, 0.048)
 texture = ExtResource("2_trhb3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

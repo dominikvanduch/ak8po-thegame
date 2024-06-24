@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c4inlp7qd2bvj" path="res://Weapon.webp" id="2_1g824"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qo7xo"]
-radius = 622.029
+radius = 604.041
 
 [node name="Pistol" type="Area2D"]
 collision_layer = 0
@@ -17,8 +17,8 @@ shape = SubResource("CircleShape2D_qo7xo")
 [node name="WeaponPivot" type="Marker2D" parent="."]
 
 [node name="Pistol" type="Sprite2D" parent="WeaponPivot"]
-position = Vector2(78, 3.57628e-07)
-scale = Vector2(0.2445, 0.2445)
+position = Vector2(37, 3.55271e-15)
+scale = Vector2(0.065125, 0.065125)
 texture = ExtResource("2_1g824")
 
 [node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol"]

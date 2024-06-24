@@ -183,7 +183,7 @@ script = ExtResource("1_deumw")
 shape = SubResource("CircleShape2D_bjyj7")
 
 [node name="Pistol" parent="." instance=ExtResource("3_i42up")]
-position = Vector2(0, -44)
+position = Vector2(1, 0)
 
 [node name="HurtBox" type="Area2D" parent="."]
 unique_name_in_owner = true
@@ -215,3 +215,6 @@ libraries = {
 scale = Vector2(0.133152, 0.133152)
 texture = ExtResource("3_oxcxd")
 hframes = 52
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
