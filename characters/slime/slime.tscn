@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ogik4s70pgwl"]
+[gd_scene load_steps=16 format=3 uid="uid://ogik4s70pgwl"]
 
 [ext_resource type="Texture2D" uid="uid://dvgfmy6vtvjji" path="res://characters/slime/slime_body.png" id="1_3j35h"]
 [ext_resource type="Script" path="res://characters/slime/slime.gd" id="1_87y5x"]
@@ -83,6 +83,23 @@ tracks/5/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_78cec"]
+resource_name = "death_eye"
+length = 0.25
+step = 0.08
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("eye:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.16, 0.24),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [16, 17, 18, 19]
+}
+
 [sub_resource type="Animation" id="Animation_lu163"]
 resource_name = "hurt"
 length = 0.2
@@ -133,6 +150,24 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, -2, 1),
 "update": 0,
 "values": [0.0, 1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_kf5ej"]
+resource_name = "hurt_eye"
+length = 0.1
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("eye:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [13, 14]
 }
 
 [sub_resource type="Animation" id="Animation_71vdi"]
@@ -233,27 +268,10 @@ tracks/0/keys = {
 "values": [4, 5, 6, 7]
 }
 
-[sub_resource type="Animation" id="Animation_kf5ej"]
-resource_name = "hurt_eye"
-length = 0.1
-loop_mode = 1
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("eye:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [13, 14]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j6cum"]
 _data = {
 "RESET": SubResource("Animation_y4lve"),
+"death_eye": SubResource("Animation_78cec"),
 "hurt": SubResource("Animation_lu163"),
 "hurt_eye": SubResource("Animation_kf5ej"),
 "idle": SubResource("Animation_71vdi"),
@@ -301,3 +319,5 @@ scale = Vector2(1.28906, 1.28906)
 texture = ExtResource("7_gw0eq")
 hframes = 4
 vframes = 5
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

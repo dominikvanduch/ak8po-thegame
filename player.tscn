@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://bmljx65wlw28w" path="res://characters/BlackGuy/FullWalkSprite.png" id="3_oxcxd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bjyj7"]
-radius = 34.0
+radius = 23.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y6tds"]
-radius = 39.0512
+radius = 27.0185
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tk34d"]
 bg_color = Color(0.442911, 0.442911, 0.442911, 1)
