@@ -18,9 +18,13 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	
-func take_damage():
-	health -= 1
-	%Cthlu.play_hurt()
+func take_damage(isSpecialAttack):
+	if isSpecialAttack:
+		health -= 3
+		%Cthlu.play_hurt()
+	else:
+		health -= 1
+		%Cthlu.play_hurt()
 	
 	if health == 0:
 		killed.emit(points)

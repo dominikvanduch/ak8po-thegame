@@ -12,6 +12,7 @@ var score := 0:
 
 func _ready():
 	score = 0
+	Global.score = 0
 
 
 func spawn_mob():
@@ -33,4 +34,5 @@ func _on_player_health_depleted():
 
 func _on_enemy_killed(points):
 	score += points
-	print(score)
+	Global.score += points
+	print(Global.score)

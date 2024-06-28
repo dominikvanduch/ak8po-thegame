@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://btfo2ts26kwgh"]
+
+[ext_resource type="Script" path="res://special_attack.gd" id="1_4isjl"]
+[ext_resource type="Texture2D" uid="uid://bs1t5vx0q7idy" path="res://BigAttack.png" id="1_cf61c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rdtss"]
+radius = 492.854
+
+[node name="SpecialAttack" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_4isjl")
+
+[node name="Attack" type="Sprite2D" parent="."]
+position = Vector2(-579, -573)
+scale = Vector2(1.54, 1.54)
+texture = ExtResource("1_cf61c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+top_level = true
+light_mask = 0
+visibility_layer = 2
+position = Vector2(-550, -578)
+shape = SubResource("CircleShape2D_rdtss")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
