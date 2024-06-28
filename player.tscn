@@ -181,6 +181,8 @@ _data = {
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
 position = Vector2(0, -28)
+collision_layer = 5
+collision_mask = 5
 script = ExtResource("1_deumw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -203,6 +205,7 @@ debug_color = Color(0.751571, 0.435175, 0.397788, 0.42)
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true
+z_index = 4
 offset_left = -24.0
 offset_top = -46.0
 offset_right = 153.0
@@ -220,6 +223,7 @@ libraries = {
 }
 
 [node name="CharacterSprite" type="Sprite2D" parent="."]
+z_index = 3
 scale = Vector2(0.133152, 0.133152)
 texture = ExtResource("3_oxcxd")
 hframes = 52

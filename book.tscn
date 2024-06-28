@@ -17,6 +17,7 @@ shape = SubResource("CircleShape2D_qo7xo")
 [node name="WeaponPivot" type="Marker2D" parent="."]
 
 [node name="Book" type="Sprite2D" parent="WeaponPivot"]
+z_index = 4
 position = Vector2(37, 3.55271e-15)
 scale = Vector2(0.065125, 0.065125)
 texture = ExtResource("2_bl1nk")
